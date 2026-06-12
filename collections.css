@@ -1,0 +1,63 @@
+body {
+  background-color: #2a3828;
+  background-image: url('/images/coll-bg.jpg');
+  background-size: cover;
+  cursor: url("images/pointer.png"), auto;
+  font-family: Georgia, serif;
+  min-height: 100vh;
+}
+
+::selection {
+  color: red;
+  background-color: gold;
+}
+
+
+
+.coll-header{
+  font-family: "Great News", cursive;
+  display: flex;
+  position: relative;
+  text-align: center;
+  padding: 40px 20px 8px;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  justify-content: center;
+}
+
+.coll-title{
+  font-size: clamp(24px, 8vw, 100px);
+  color: #FF8C00;
+  white-space: none;
+}
+
+.board{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.board img {
+  width: 100%;
+  display: block;
+}
+
+.board-col{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  grid-template-rows: repeat(2, 1fr);    /* 2 filas */
+  padding: 8% 6%; /* ajusta para que quede dentro del marco de madera */
+}
+
+.board-grid > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

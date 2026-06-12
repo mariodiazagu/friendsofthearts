@@ -1,0 +1,475 @@
+/* ============================================
+   FRIENDS OF THE ARTS — style.css
+   ============================================ */
+
+
+/* ── VARIABLES GLOBALES ── */
+:root {
+  --yellow: #ffd700;
+  --mono: 'Share Tech Mono', 'Courier New', monospace;
+  --panel-bg: rgba(105, 132, 145, 0.72);
+  --panel-border: rgba(210, 220, 225, 0.75);
+}
+
+
+/* ── RESET ── */
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+
+/* ── BODY ── */
+body {
+  background-color: #2a3828;
+  cursor: url("/images/pointer.png"), auto;
+  font-family: Georgia, serif;
+  min-height: 100vh;
+}
+
+
+/* ── Animacion Background ── */
+
+.fondo-zoom {
+  transform: scaleX(-1); /* voltea horizontalmente */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/bg.png');
+  background-size: cover;
+  background-position: center top;
+  z-index: -1;
+  animation: zoomFondo 20s ease-in-out infinite;
+}
+
+@keyframes zoomFondo {
+  0%, 100% { transform: scaleX(-1) scale(1); }
+  50%      { transform: scaleX(-1) scale(1.08); }
+}
+
+.arbol {
+  position: fixed;
+  left: -51px;
+  bottom: -50px;
+  width: 1283px;
+  pointer-events: none;
+  z-index: 1;
+  transform-origin: bottom left; /* para que el zoom crezca desde esa esquina */
+  animation: zoomArbol 25s ease-in-out infinite;
+}
+
+@keyframes zoomArbol {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.05); }
+}
+
+
+/* ── CANVAS LUCIÉRNAGAS ── */
+#luciernagas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+/* ── ENLACES ── */
+a { 
+  color: inherit; 
+  text-decoration: none; 
+  cursor: url("/images/pointer.png"), auto;
+}
+
+a:hover { 
+  text-decoration: underline;
+  cursor: url("/images/pointer.png"), auto;
+}
+
+
+/* ── HEADER / TÍTULO ── */
+.site-header {
+  display: flex;
+  position: relative;
+  text-align: center;
+  padding: 40px 20px 8px;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  justify-content: center;
+}
+
+.friends-of {
+  display: inline;
+  position: relative;
+  font-family: 'VT323', monospace;
+  font-size: 100px;
+  color: #ffffff;
+  letter-spacing: 10px;
+  line-height: 1;
+  white-space: nowrap;
+  text-shadow:
+    2px 2px 0 rgba(0,0,0,0.6),
+    0 0 20px rgba(0,0,0,0.4);
+}
+
+.the-arts {
+  display: inline;
+  position: relative;
+  font-family: "Great News", cursive;
+  font-weight: 400;
+  background-color: #000000;
+  color: var(--yellow);
+  font-size: 100px;
+  letter-spacing: 10px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.the-arts, .friends-of {
+  display: inline-flex;
+  align-items: center;
+}
+
+.site-title .hi { 
+  color: var(--yellow); 
+}
+
+
+/* ── PLATO ── */
+.plato {
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);
+  position: absolute;
+  bottom: -22px;
+  right: -39px;
+  width: 103px;
+  transform: rotate(28deg);
+  content: url('widgets/img/plate.png');
+  transition: transform 0.1s ease;
+}
+
+.plato:hover {
+  cursor: url("/images/pointer_click.png"), auto;
+}
+
+.plato:active {
+  content: url('widgets/img/brokenplate.png');
+  transform: rotate(60deg);
+  cursor: url("/images/pointer.png"), auto;
+  animation: romper 0.15s ease;
+}
+
+@keyframes romper {
+  0%   { transform: rotate(28deg) translateX(0); }
+  25%  { transform: rotate(30deg) translateX(-3px); }
+  75%  { transform: rotate(26deg) translateX(3px); }
+  100% { transform: rotate(60deg) translateX(0); }
+}
+
+
+/* ── NAV ── */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 55px;
+  padding: 30px 20px 35px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 26px;
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 2px solid var(--yellow);
+  padding-bottom: 1px;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.9), 0 0 10px rgba(0,0,0,0.5);
+}
+
+nav a:hover { 
+  color: var(--yellow); 
+  text-decoration: none; 
+}
+
+.nav-item {
+  position: relative;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(150, 160, 165, 0.85);
+  backdrop-filter: blur(8px);
+  border: 2px dashed var(--yellow);
+  border-radius: 12px;
+  padding: 16px 24px;
+  min-width: 240px;
+  z-index: 10;
+  margin-top: 0; /* sin hueco */
+}
+
+.nav-item:hover .dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.dropdown a {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 18px;
+  color: #fff;
+  border-bottom: none; /* quita el subrayado amarillo del nav normal */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.dropdown a:hover {
+  color: var(--yellow);
+}
+
+
+/* ── LAYOUT: TRES COLUMNAS ── */
+.columns {
+  display: grid;
+  grid-template-columns: 220px 1fr 220px;
+  gap: 16px;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 6px 140px 50px 20px;
+  align-items: start;
+}
+
+.col-left { 
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: fit-content;
+}
+
+.col-center { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 14px; 
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px) saturate(1.4);
+  -webkit-backdrop-filter: blur(12px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 24px 28px;
+  overflow: visible;
+  box-shadow: 
+    0 4px 24px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    height: 460px;
+}
+
+.panel-texto::after {
+  content: '✮ ✮ ✮';
+  display: block;
+  text-align: center;
+  font-size: 5px;
+  letter-spacing: 4px;
+  padding: 4px 0;
+  font-family: 'UnifrakturMaguntia', cursive;
+  color: #fffbf1;
+  filter: drop-shadow(2px 0px 0 var(--yellow));
+  text-shadow: -1px -1px 0 #5e5643, 1px -1px 0 #5e5643, 
+               -1px 1px 0 #5e5643, 1px 1px 0 #5e5643;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+
+.col-right { 
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: fit-content;
+}
+
+
+/* ── PANEL CENTRAL ── */
+.panel {
+  font-family: "Syne Mono", monospace;
+  font-size: 15px;
+  background-image: url(images/Pattern_5.gif);
+  background-position: center bottom;
+  display: grid;
+  line-height: 0.7;
+  background-color: #fffbf1;
+  border: 5px solid #fffbf1;
+  outline: 1px solid black;
+  border-radius: 8px;
+  
+}
+
+.panel-titulo {
+  font-family: 'UnifrakturMaguntia', cursive;
+  font-weight: 2000;
+  letter-spacing: -2px;
+  font-size: 35px;
+  text-align: center;
+  color: #fffbf1;
+  filter: drop-shadow(2px 0px 0 var(--yellow));
+  text-shadow: -1px -1px 0 #5e5643, 1px -1px 0 #5e5643, 
+               -1px 1px 0 #5e5643, 1px 1px 0 #5e5643;
+               
+  margin-bottom: 16px;
+  margin-top: -40px; /* ajusta hasta que quede mitad y mitad */
+  position: relative;
+  z-index: 2; /* para que quede por encima del borde del contenedor */
+}
+
+.panel-texto {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.stamps {
+  filter: saturate(0);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* o space-between, space-around */
+  gap: 12px;
+  padding: 6px 20px 20px;
+  filter: drop-shadow();
+}
+
+
+/* ── FOOTER ── */
+footer {
+  text-align: center;
+  padding: 20px 20px 30px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
+  text-shadow: 1px 1px 3px #000;
+}
+
+footer a { 
+  color: rgba(255,255,255,0.85); 
+}
+
+.foot-sign {
+  display: block;
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: red;
+  margin-top: 6px;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+}
+
+.brain-made-logo {
+  margin-top: 10px;
+}
+
+
+/* ── ANIMACIONES ── */
+.blink { 
+  animation: blink 1.2s step-end infinite; 
+}
+
+@keyframes blink { 
+  50% { opacity: 0; } 
+}
+
+
+/* ── RESPONSIVE ── */
+
+/* Tamaño fluido del título y el plato — sin breakpoint */
+.friends-of,
+.the-arts {
+  font-size: clamp(18px, 6.5vw, 100px);
+  letter-spacing: clamp(2px, 0.8vw, 10px);
+}
+
+.plato {
+  width: clamp(30px, 7vw, 103px);
+  right: clamp(-40px, -2.5vw, -39px);
+  bottom: clamp(-8px, -1.5vw, -22px);
+}
+
+/*Overlays PNGs*/
+
+
+@media (max-width: 820px) {
+  nav { gap: 22px; }
+  nav a { font-size: 20px; }
+}
+
+@media (max-width: 768px) {
+  .columns {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .col-center {
+    grid-column: 1 / -1;
+    order: 1;
+  }
+
+  .col-left  { order: 2; }
+  .col-right { order: 3; }
+
+  .col-left, .col-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+.arbol {
+  position: fixed;
+  left: -14px;
+  bottom: -33px;
+  width: 1274px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@media (max-width: 1550px) {
+  .site-header {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+@media (max-width: 1150px) {
+  .footer {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .plato, .arbol {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  nav a { font-size: 16px; }
+  nav { gap: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blink { animation: none; }
+}
