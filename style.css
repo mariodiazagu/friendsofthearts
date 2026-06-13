@@ -52,7 +52,7 @@ body {
 
 .arbol {
   position: fixed;
-  left: -51px;
+  left: -7px;
   bottom: -50px;
   width: 1283px;
   pointer-events: none;
@@ -179,8 +179,10 @@ nav {
   display: flex;
   justify-content: center;
   gap: 55px;
-  padding: 30px 20px 35px;
+  padding: 30px 27px 35px;
   flex-wrap: wrap;
+  left: -5%;
+  position: relative;
 }
 
 nav a {
