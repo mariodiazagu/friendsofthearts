@@ -104,9 +104,9 @@ body {
   width: 15vw; 
 }
 .vinyls   { 
-  top: 12%; 
-  left: 75%; 
-  width: 15vw; 
+  top: 0%;
+  left: 65%;
+  width: 35vw; 
 }
 .trinkets { 
   top: 45%; 
@@ -120,6 +120,11 @@ body {
 
 /* ── HOVER ESPECIAL: PERFUMES ── */
 .perfumes:hover img {
+  opacity: 0.5;
+  transform: rotate(20deg);
+}
+
+.vinyls:hover img {
   opacity: 0.5;
   transform: rotate(20deg);
 }
