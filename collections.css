@@ -1,3 +1,9 @@
+/* ============================================
+   COLLECTIONS — collections.css
+   ============================================ */
+
+
+/* ── BODY ── */
 body {
   background-color: #2a3828;
   background-image: url('/images/coll-bg.jpg');
@@ -13,8 +19,8 @@ body {
 }
 
 
-
-.coll-header{
+/* ── HEADER ── */
+.coll-header {
   font-family: "Great News", cursive;
   display: flex;
   position: relative;
@@ -27,119 +33,93 @@ body {
   justify-content: center;
 }
 
-.coll-title{
+.coll-title {
   font-size: clamp(24px, 4vw, 100px);
   color: #FF8C00;
-  white-space: none;
+  white-space: nowrap;
 }
 
-.columns{
-  display: grid;
-  grid-template-columns: 220px 1fr 220px;
-  gap: 16px;
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 6px 20px 15px 20px;
-  align-items: start;
-}
 
-.board{
+/* ── WRAPPER (contenedor de los objetos) ── */
+.wrapper {
   position: relative;
-  display: flex;
-  justify-content: center;
+  width: 100%;
+  height: 1400px; /* ajusta según cuántos objetos tengas */
 }
 
-.board img {
-  width: 100%;
+
+/* ── ITEMS (cada objeto flotante) ── */
+.item {
+  position: absolute; /* se posiciona dentro de .wrapper */
+}
+
+.item img {
   display: block;
-}
-
-.board{
-  position: relative;
-  max-width: 600px; /* ajusta este valor a tu gusto */
-  margin: 0 auto; /* lo centra horizontalmente */
-}
-
-.board-grid {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
-  grid-template-rows: repeat(2, 1fr);    /* 2 filas */
-  padding: clamp(20px, 8%, 100px) clamp(15px, 6%, 80px); /* arriba derecha abajo izquierda */
+  height: auto;
+  transition: filter 0.3s ease;
 }
 
-.board-grid > div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.board-item {
-  position: relative;
-}
-
-.board-item img {
-    -webkit-filter: drop-shadow(5px 5px 5px #222);
-  filter: drop-shadow(5px 5px 5px #222);
-  rotate: -10deg;
-  width: 100px;
-  transition: opacity 0.3s ease;
-    padding: clamp(20px, 8%, 100px) clamp(15px, 6%, 80px); /* arriba derecha abajo izquierda */
-}
-
+/* ── ETIQUETA AL HACER HOVER ── */
 .board-label {
-  -webkit-filter: drop-shadow(5px 5px 5px #ffffff);
-  filter: drop-shadow(5px 5px 5px #ffffff);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
   transition: opacity 0.3s ease;
-  font-family: 'EB Garamond', serif;
-  font-size: 24px;
-  color: #ff0000;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 25px;
+  color: #fff;
+  text-shadow: 
+    3px 3px 0 #1a1a3a,
+    -1px -1px 0 #1a1a3a,
+    1px -1px 0 #1a1a3a,
+    -1px 1px 0 #1a1a3a;
   white-space: nowrap;
-  pointer-events: none; /* para que no interfiera con el hover */
+  pointer-events: none;
+  z-index: 2;
 }
 
-.board-item:hover img {
-  rotate: 20deg;
-  filter: saturate(100);
+.item:hover img {
+  filter: brightness(0.6);
 }
 
-.board-item:hover .board-label {
+.item:hover .board-label {
   opacity: 1;
 }
 
-@media (max-width: 768px) {
-  .columns {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-  }
 
-  .board {
-    grid-column: 1 / -1;
-    order: 1;
-  }
-
-  .col-left  { order: 2; }
-  .col-right { order: 3; }
-
-  .col-left, .col-right {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
+/* ── POSICIONES Y TAMAÑOS DE CADA ITEM ── */
+.perfumes { 
+  top: 2%;
+  left: 8%;
+  width: 22vw;
+  rotate: -18deg;
 }
+.friends  { 
+  top: 8%;  
+  left: 40%; 
+  width: 15vw; 
+}
+.vinyls   { 
+  top: 12%; 
+  left: 75%; 
+  width: 15vw; 
+}
+.trinkets { 
+  top: 45%; 
+  left: 15%; 
+  width: 15vw; }
+.pokemon  { 
+  top: 48%; 
+  left: 55%; 
+  width: 15vw; }
 
-@media (max-width: 770px){
-  .col-right, img{
-    display:none;
-  }
+
+/* ── HOVER ESPECIAL: PERFUMES ── */
+.perfumes:hover img {
+  opacity: 0.5;
+  transform: rotate(20deg);
 }
