@@ -52,7 +52,7 @@ body {
 
 .arbol {
   position: fixed;
-  left: -7px;
+  left: -51px;
   bottom: -50px;
   width: 1283px;
   pointer-events: none;
@@ -179,10 +179,8 @@ nav {
   display: flex;
   justify-content: center;
   gap: 55px;
-  padding: 30px 27px 35px;
+  padding: 30px 20px 35px;
   flex-wrap: wrap;
-  left: -5%;
-  position: relative;
 }
 
 nav a {
@@ -419,25 +417,30 @@ footer a {
   nav a { font-size: 20px; }
 }
 
-@media (max-width: 940px) {
+@media (max-width: 600px) {
   .columns {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 6px 12px 15px;
   }
 
   .col-center {
-    grid-column: 1 / -1;
+    flex: 1 0 100%; /* ocupa toda la fila → fuerza salto de línea */
     order: 1;
+    height: auto;
   }
 
-  .col-left  { order: 2; }
-  .col-right { order: 3; }
-
   .col-left, .col-right {
+    order: 2;
+    flex: 0 0 auto; /* tamaño = su contenido (ya zoomeado) */
+    zoom: 0.55;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
   }
 }
 

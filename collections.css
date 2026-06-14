@@ -107,15 +107,17 @@ body {
   top: 0%;
   left: 65%;
   width: 35vw; 
+  rotate: -40deg;
 }
 .trinkets { 
   top: 45%; 
   left: 15%; 
   width: 15vw; }
 .pokemon  { 
-  top: 48%; 
-  left: 55%; 
-  width: 15vw; }
+  top: 33%;
+  left: 25%;
+  width: 24vw; 
+}
 
 
 /* ── HOVER ESPECIAL: PERFUMES ── */
