@@ -22,7 +22,7 @@
 
 /* ── BODY ── */
 body {
-  background-color: #2a3828;
+  background-color: rgb(42, 56, 40);
   cursor: url("/images/pointer.png"), auto;
   font-family: Georgia, serif;
   min-height: 100vh;
