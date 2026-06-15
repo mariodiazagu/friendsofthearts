@@ -53,7 +53,7 @@ body {
 /* ── ITEMS (cada objeto flotante) ── */
 .item {
   position: absolute; /* se posiciona dentro de .wrapper */
-  grid
+  display: grid
 }
 
 .item img {
