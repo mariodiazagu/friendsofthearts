@@ -157,6 +157,7 @@ a:hover {
 
 .plato:hover {
   cursor: url("/images/pointer_click.png"), auto;
+  rotate: 10deg;
 }
 
 .plato:active {
