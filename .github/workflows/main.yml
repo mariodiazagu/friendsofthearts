@@ -17,3 +17,5 @@ jobs:
           api_token: ${{ secrets.NEOCITIES_API_KEY }}
           dist_dir: .
           cleanup: false
+      - name: Remove non-site files
+    run: rm -rf .git .github && find . -name ".DS_Store" -delete
