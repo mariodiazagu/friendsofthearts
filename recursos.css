@@ -1,21 +1,25 @@
 :root {
-    --link-color:  #ffd700;
+    --link-color:  #ff8000;
 }
 
 body {
-    background-image: url("images/recursos-bg.png"); filter: blur(01.5px);
+    background-image: url("images/res-bg.png");
 }
 
-
-
 .recursos-title{
-    color: white;
+    color: red;
     margin-top: 10px;
     font-size: 50px;
-    text-decoration: 1.5px white wavy underline;
+    text-decoration: 1.5px red wavy underline;
     font-family: "Jersey 10", sans-serif;
     font-weight: 400;
     font-style: normal;
+    background-color: rgb(255, 232, 151);
+    border-radius: 5px;
+    padding: 10px;
+    filter: drop-shadow(5px 5px 5px #22222282);
+    backdrop-filter: blur(12px) saturate(1.4);
+     -webkit-backdrop-filter: blur(12px) saturate(1.4);
 }
 
 .recursos-link {
@@ -48,7 +52,6 @@ body {
 .recursos-link:hover .title-gif{
     display: block;
     z-index: 1;
-    cursor: none;
 }
 
 .res-desc {
@@ -57,26 +60,30 @@ body {
     padding: 15px;
     margin-left: 700px;
     rotate: 10deg;
-    background-color: pink;
-    color: red;
+    background-color: red;
+    color: rgb(255, 232, 151);;
     border-radius: 10px;
     filter: drop-shadow(5px 5px 5px #222);
-    border: red 1px dashed;
+    border: rgb(255, 232, 151) 1px dashed;
 }
 
 .desc-text::selection {
     color: pink;
-    background-color: red;
+    background-color: rgb(255, 232, 151);;
 }
 
 @media (max-width: 945px) {
     .res-desc{
         display: none;
     }
+
+    .resources-grid{
+        margin: 15px;
+    }
 }
 
 a {
-    color:rgb(113, 149, 97);
+    color:rgb(25, 0, 255);
 }
 
 a:hover{
@@ -85,7 +92,7 @@ a:hover{
 
 .resources-grid{
     position: relative;
-    color: rgb(213, 213, 213);
+    color: rgba(30, 26, 46, 0.821);
     display: grid;
     gap: 20px;
     grid-template-columns: 1fr 1fr;
@@ -93,6 +100,9 @@ a:hover{
     padding: 10px 100px 10px 100px;
     max-width: 900px;
     margin: 0 auto;
+    background-color: rgb(255, 232, 151);
+    border-radius: 10px;
+    filter: drop-shadow(5px 5px 5px #22222264);
 }
 
 
@@ -121,5 +131,6 @@ ul {
         overflow: hidden;
         flex-direction: column;
         font-size: 3vw;
+        
     }
 }
