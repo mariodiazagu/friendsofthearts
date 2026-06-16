@@ -101,14 +101,18 @@ a:hover {
 .res-desc {
   position: absolute;
   max-width: 165px;
+  min-width: 165px;
   padding: 15px;
-  margin-left: 700px;
+  right: 20%;
+  top: 151px;
   rotate: 10deg;
   background-color: var(--text-color);
   color: var(--bg-color);
   border-radius: var(--border-radius);
   border: var(--bg-color) 1px dashed;
   filter: drop-shadow(5px 5px 5px #222);
+  z-index: 1;
+  overflow: hidden;
 }
 
 
@@ -153,17 +157,23 @@ ul {
 
 
 /* ── RESPONSIVE ── */
-@media (max-width: 945px) {
+
+@media (max-width: 1130px) {
   .res-desc {
-    display: none;
+    right: 10%;
   }
 
   .resources-grid {
-    margin: 15px;
+    max-width: 95%;
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 850px) {
+  .res-desc {
+    zoom: 80%;
+    top: 250px;
+  }
+
   .resources-grid {
     display: flex;
     flex-direction: column;
