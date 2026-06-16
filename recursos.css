@@ -1,136 +1,174 @@
+/* ============================================
+   RECURSOS — recursos.css
+   ============================================ */
+@keyframes bgAnimation {
+  0%    {background-position: 10px;}
+  100%  {background-position: 100px;}
+}
+
+/* ── VARIABLES GLOBALES ── */
 :root {
-    --link-color:  #ff8000;
+  --link-color: #ff8000;
+  --bg-color: #fbf4db;
+  --text-color: rgb(255, 0, 0);
+  --norm-text-color: rgba(30, 26, 46, 0.821);
+  --border-radius: 10px;
 }
 
+
+/* ── BODY ── */
 body {
-    background-image: url("images/res-bg.png");
+  background-image: url("images/res-bg.png");
+  background-position: 10px;
+  background-size: auto;
+  background-repeat: repeat;
+  animation-name: bgAnimation;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate-reverse;
 }
 
-.recursos-title{
-    color: red;
-    margin-top: 10px;
-    font-size: 50px;
-    text-decoration: 1.5px red wavy underline;
-    font-family: "Jersey 10", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    background-color: rgb(255, 232, 151);
-    border-radius: 5px;
-    padding: 10px;
-    filter: drop-shadow(5px 5px 5px #22222282);
-    backdrop-filter: blur(12px) saturate(1.4);
-     -webkit-backdrop-filter: blur(12px) saturate(1.4);
+
+/* ── ENLACES ── */
+a {
+  color: rgb(25, 0, 255);
+}
+
+a:hover {
+  color: var(--link-color);
+}
+
+::selection {
+  color: var(--text-color);
+  background-color: rgb(255, 232, 151);
+}
+
+
+/* ── HEADER / TÍTULO ── */
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px;
 }
 
 .recursos-link {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
+.recursos-title {
+  font-family: "Jersey 10", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+  color: var(--text-color);
+  text-decoration: 1.5px var(--text-color) wavy underline;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  background-color: var(--bg-color);
+  backdrop-filter: blur(12px) saturate(1.4);
+  -webkit-backdrop-filter: blur(12px) saturate(1.4);
+  filter: drop-shadow(5px 5px 5px #22222282);
+}
+
+
+/* ── GIF AL HACER HOVER ── */
 .title-gif {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
-    width: 20em;
-    filter: drop-shadow(5px 5px 5px #222)
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  width: 20em;
+  filter: drop-shadow(5px 5px 5px #222);
 }
 
-.header{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 80px;
+.recursos-link:hover .recursos-title {
+  opacity: 0;
 }
 
-.recursos-link:hover .recursos-title{
-    opacity: 0;
+.recursos-link:hover .title-gif {
+  display: block;
+  z-index: 1;
 }
 
-.recursos-link:hover .title-gif{
-    display: block;
-    z-index: 1;
-}
 
+/* ── DESCRIPCIÓN LATERAL (post-it) ── */
 .res-desc {
-    position: absolute;
-    max-width: 165px;
-    padding: 15px;
-    margin-left: 700px;
-    rotate: 10deg;
-    background-color: red;
-    color: rgb(255, 232, 151);;
-    border-radius: 10px;
-    filter: drop-shadow(5px 5px 5px #222);
-    border: rgb(255, 232, 151) 1px dashed;
-}
-
-.desc-text::selection {
-    color: pink;
-    background-color: rgb(255, 232, 151);;
-}
-
-@media (max-width: 945px) {
-    .res-desc{
-        display: none;
-    }
-
-    .resources-grid{
-        margin: 15px;
-    }
-}
-
-a {
-    color:rgb(25, 0, 255);
-}
-
-a:hover{
-    color: var(--link-color);
-}
-
-.resources-grid{
-    position: relative;
-    color: rgba(30, 26, 46, 0.821);
-    display: grid;
-    gap: 20px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    padding: 10px 100px 10px 100px;
-    max-width: 900px;
-    margin: 0 auto;
-    background-color: rgb(255, 232, 151);
-    border-radius: 10px;
-    filter: drop-shadow(5px 5px 5px #22222264);
+  position: absolute;
+  max-width: 165px;
+  padding: 15px;
+  margin-left: 700px;
+  rotate: 10deg;
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  border-radius: var(--border-radius);
+  border: var(--bg-color) 1px dashed;
+  filter: drop-shadow(5px 5px 5px #222);
 }
 
 
-.res-title {
-    font-family: "Jersey 10", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 40px;
-    color: red;
+/* ── GRID DE RECURSOS ── */
+.resources-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+  padding: 10px 100px;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: var(--bg-color);
+  border-radius: var(--border-radius);
+  filter: drop-shadow(5px 5px 5px #22222264);
+  color: var(--norm-text-color);
 }
 
-ul {
-    list-style-type: none;
-    padding-bottom: 10px;
-    font-size: 18px;
-    justify-self: stretch;
-}
-
+/* Posición explícita de los títulos */
 .res-title:nth-of-type(1) { grid-column: 1; grid-row: 1; }
 .res-title:nth-of-type(2) { grid-column: 2; grid-row: 1; }
 
-@media screen and (max-width: 650px) {
-    .resources-grid {
-        padding: 20px;
-        display: flex;
-        overflow: hidden;
-        flex-direction: column;
-        font-size: 3vw;
-        
-    }
+
+/* ── TÍTULOS DE CADA SECCIÓN ── */
+.res-title {
+  font-family: "Jersey 10", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+  color: var(--text-color);
+}
+
+
+/* ── LISTAS DE RECURSOS ── */
+ul {
+  list-style-type: none;
+  padding-bottom: 10px;
+  font-size: 18px;
+  justify-self: stretch;
+}
+
+
+/* ── RESPONSIVE ── */
+@media (max-width: 945px) {
+  .res-desc {
+    display: none;
+  }
+
+  .resources-grid {
+    margin: 15px;
+  }
+}
+
+@media (max-width: 650px) {
+  .resources-grid {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    font-size: 3vw;
+    overflow: hidden;
+  }
 }
