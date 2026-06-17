@@ -54,11 +54,12 @@ body {
   position: fixed;
   left: -51px;
   bottom: -50px;
-  width: 1283px;
   pointer-events: none;
   z-index: 1;
   transform-origin: bottom left; /* para que el zoom crezca desde esa esquina */
   animation: zoomArbol 25s ease-in-out infinite;
+  height:110vh;
+  width: auto;
 }
 
 @keyframes zoomArbol {
@@ -279,6 +280,7 @@ nav a:hover {
     0 4px 24px rgba(0, 0, 0, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
     height: 460px;
+    min-width: 310px;
 }
 
 .panel-texto::after {
@@ -418,6 +420,17 @@ footer a {
   nav a { font-size: 20px; }
 }
 
+@media (max-width: 730px) {
+  .columns {
+    padding: 6px 8px 15px 8px;
+    grid-template-columns: 180px 1fr 180px; /* columnas un poco más estrechas */
+  }
+
+  .col-left, .col-right {
+    zoom: 0.8;
+  }
+}
+
 @media (max-width: 600px) {
   .columns {
     display: flex;
@@ -449,7 +462,7 @@ footer a {
   position: fixed;
   left: -14px;
   bottom: -33px;
-  width: 1274px;
+  width: auto;
   pointer-events: none;
   z-index: 1;
 }
@@ -469,6 +482,10 @@ footer a {
 }
 
 @media (max-width: 768px) {
+  .columns {
+    padding: 6px 20px 15px 20px; /* padding simétrico una vez el árbol desaparece */
+  }
+
   .plato, .arbol {
     display: none;
   }
@@ -481,6 +498,9 @@ footer a {
 
 @media (prefers-reduced-motion: reduce) {
   .blink { animation: none; }
+  .arbol {display: none; }
+  .fondo-zoom {animation: none; }
+  #luciernagas { display: none; }
 }
 
 @media (max-width: 9800px) {
@@ -489,3 +509,9 @@ footer a {
     z-index: 2;
   }
 }
+
+@media (orientation: portrait) {
+  .arbol{
+    display: none;
+    }
+  }
