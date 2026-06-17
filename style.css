@@ -11,14 +11,12 @@
   --panel-border: rgba(210, 220, 225, 0.75);
 }
 
-
 /* ── RESET ── */
 *, *::before, *::after { 
   box-sizing: border-box; 
   margin: 0; 
   padding: 0; 
 }
-
 
 /* ── BODY ── */
 body {
@@ -28,6 +26,10 @@ body {
   min-height: 100vh;
 }
 
+::selection {
+  color: black;
+  background-color: rgb(255, 234, 0);
+}
 
 /* ── Animacion Background ── */
 
@@ -254,7 +256,7 @@ nav a:hover {
   gap: 16px;
   max-width: 1080px;
   margin: 0 auto;
-  padding: 6px 140px 15px 20px;
+  padding: 6px 40px 15px 40px;
   align-items: start;
 }
 
@@ -279,8 +281,7 @@ nav a:hover {
   box-shadow: 
     0 4px 24px rgba(0, 0, 0, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    height: 460px;
-    min-width: 310px;
+  min-width: 310px;
 }
 
 .panel-texto::after {
@@ -342,9 +343,10 @@ nav a:hover {
 
 .panel-texto {
   list-style: none;
-  padding: 0;
+  padding: 15px;
   margin: 0;
   text-align: center;
+  line-height: 15px;
 }
 
 .stamps {

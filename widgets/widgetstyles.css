@@ -1,14 +1,16 @@
  /*Music Widget*/
  .music-widget:hover,
 .visitor-widget:hover,
-.status-widget:hover {
+.status-widget:hover,
+footer:hover {
   z-index: 100;
   position: relative;
+  opacity: 1;
 }
   
   
   .music-widget {
-    cursor: url('/img/np-albumcover.png'), auto;
+    
     opacity: 0.95;
     width: 220px;
     height: 280px;
@@ -22,6 +24,11 @@
     font-family: 'Press Start 2P', monospace;
     font-size: 8px;
     color: #222;
+    
+  }
+
+  .music-widget:hover img{
+    cursor: url("/widgets/img/np-albumcover.png"), auto;
   }
 
   
@@ -276,20 +283,23 @@
 }
 
 .playlist-widget {
+  opacity: 0.85;
+  backdrop-filter: blur(10px);
   width: 220px;
-  background: #e8ead8;
-  border: 3px solid #d4c84a;
+  border: 3px solid #00ff1a;
+;
   border-radius: 8px;
   font-family: 'Press Start 2P', monospace;
   font-size: 7px;
   padding: 8px;
+  filter: invert(100%);
 }
 
 .pl-header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 6px;
-  color: #333;
+  color: #00ff1a;
 }
 
 .pl-progress {
@@ -311,7 +321,8 @@
   justify-content: space-around;
   margin-bottom: 8px;
   font-size: 12px;
-  color: #6aaa8a;
+  color: #ffffff;
+  opacity: 1 !important; 
 }
 
 .pl-list {
@@ -322,12 +333,12 @@
 
 .pl-track {
   padding: 5px 8px;
-  color: #555;
+  color: #ffffff;
   border-radius: 2px;
   line-height: 1.8;
 }
 
 .pl-track.active {
-  background: #222;
-  color: #eee;
+  background: #ffffff;
+  color: #000000;
 }

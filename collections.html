@@ -34,7 +34,10 @@
 
 </head>
   <div class="coll-header">
+    <a href="index.html" class="coll-link">
     <h1 class="coll-title">my collections</h1>
+    <img src="/images/icons/arrow.gif" alt="back" class="title-gif">
+    </a>
   </div>
 
 <!-- ============================================
@@ -42,29 +45,38 @@
      ============================================ -->
 <body>
     <div class="wrapper">
-        <div class="item perfumes">
+
+        <div class="item vinilos" id="item">
           <a href="collections/perfumes.html">
-          <img src="images/perfume.png" alt="perfumes">
+          <img src="images/recordplayer.png" alt="record players">
+          <span class="board-label">vinyls</span>
+          </a>
+        </div>
+
+        <div class="item pokemon" id="item">
+          <a href="collections/pokemon.html">
+          <img src="images/mew.png" alt="mew card">
+          <span class="board-label">pokémon</span>
+          </a>
+        </div>
+
+        <div class="item perfume" id="item">
+          <a href="collections/pokemon.html">
+          <img src="images/perfume.png" alt="perfume">
           <span class="board-label">perfumes</span>
           </a>
         </div>
-        <div class="item friends">
-          <img src="images/perfume.pn" alt="friends">
-          <span class="board-label">my friends</span>
-        </div>
-        <div class="item vinyls">
-          <img src="images/vinyl.png" alt="vinyls">
-          <span class="board-label">vinyls</span>
-        </div>
-        <div class="item trinkets>
-          <img src="images/perfume.pn" alt="trinkets">
-          <span class="board-label">trinkets</span>
-        </div>
-        <div class="item pokemon">
-          <img src="images/pokemon.png" alt="pokemon">
-          <span class="board-label">pokemon cards</span>
-        </div>
-  </div>
 
+        <div class="item tattoos" id="item">
+          <a href="collections/tatoos.html">
+          <img src="images/tattoo.png" alt="tattoo gun">
+          <span class="board-label">tats</span>
+          </a>
+        </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>    
+    <script src="collections.js"></script>
 </body>
 </html>

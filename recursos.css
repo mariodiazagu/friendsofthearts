@@ -12,7 +12,7 @@
   --bg-color: #fbf4db;
   --text-color: rgb(255, 0, 0);
   --norm-text-color: rgba(30, 26, 46, 0.821);
-  --border-radius: 10px;
+  --border-radius: 0px;
 }
 
 
@@ -65,10 +65,8 @@ a:hover {
   font-style: normal;
   font-size: 50px;
   color: var(--text-color);
-  text-decoration: 1.5px var(--text-color) wavy underline;
   margin-top: 10px;
   padding: 10px;
-  border-radius: var(--border-radius);
   background-color: var(--bg-color);
   backdrop-filter: blur(12px) saturate(1.4);
   -webkit-backdrop-filter: blur(12px) saturate(1.4);
@@ -108,11 +106,14 @@ a:hover {
   rotate: 10deg;
   background-color: var(--text-color);
   color: var(--bg-color);
-  border-radius: var(--border-radius);
   border: var(--bg-color) 1px dashed;
   filter: drop-shadow(5px 5px 5px #222);
   z-index: 1;
   overflow: hidden;
+}
+
+.res-desc:hover {
+  filter: invert();
 }
 
 
@@ -144,6 +145,19 @@ a:hover {
   font-style: normal;
   font-size: 40px;
   color: var(--text-color);
+}
+
+.touhou3 {
+  color: #ccf;
+  background: #00d;
+  padding: 12px;
+  border-image-slice: 12;
+  border-image-width: 12px;
+  border-image-repeat: round;
+  border-style: solid;
+  border-color: transparent;
+  image-rendering: pixelated;
+  border-image-source: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgAQMAAABJtOi3AAAABlBMVEUAAACZmf/aJORuAAAAAXRSTlMAQObYZgAAAFRJREFUeNpjQAD7////QAgDBgYeBsOZM3sYjKKifBhMly5dw2A6c+YaBiMGBh8GQwaGHgazBsYcMAHmQiRMGxjXgAgC6sBGgQ0FGw+2CGIlwgVwAACQHyhXCFDEKwAAAABJRU5ErkJggg==");
 }
 
 
