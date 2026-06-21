@@ -18,8 +18,35 @@ body {
   background-color: gold;
 }
 
+.page-wrapper {
+  position: relative;
+}
+
 
 /* ── HEADER ── */
+.touhou3 {
+  color: #ccf;
+  background: rgb(221, 0, 0);
+  padding: 12px;
+  border-image-slice: 12;
+  border-image-width: 12px;
+  border-image-repeat: round;
+  border-style: solid;
+  border-color: transparent;
+  image-rendering: pixelated;
+  border-image-source: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgAQMAAABJtOi3AAAABlBMVEUAAACZmf/aJORuAAAAAXRSTlMAQObYZgAAAFRJREFUeNpjQAD7////QAgDBgYeBsOZM3sYjKKifBhMly5dw2A6c+YaBiMGBh8GQwaGHgazBsYcMAHmQiRMGxjXgAgC6sBGgQ0FGw+2CGIlwgVwAACQHyhXCFDEKwAAAABJRU5ErkJggg==");
+}
+
+.coll-desc {
+  position: absolute;
+  display: flex;
+  right: 19%;
+  top: -3%;
+  max-width: 200px;
+  rotate: 10deg;
+  transform: scale(1);
+}
+
 .coll-header a {
   font-family: "Great News", cursive;
   display: flex;
@@ -61,10 +88,36 @@ body {
 .wrapper {
   display: block;
   position: relative;
-  height: 100vh; /* o la altura que necesites */
-  width: 100%;
-
+  width: 1400px;
+  height: 800px;
+  transform: scale(1);
+  transform-origin: top left;
 }
+
+@media (max-width: 1400px) {
+  .wrapper { transform: scale(0.85); }
+}
+
+@media (max-width: 1100px) {
+  .wrapper { transform: scale(0.65);}
+  .coll-desc {right: 11%; top: -3%;}
+}
+
+@media (max-width: 800px) {
+  .wrapper { transform: scale(0.45); }
+  .coll-desc {right: 3%; top: -3%;transform: scale(0.45)}
+}
+
+@media (max-width: 500px) {
+  .wrapper { transform: scale(0.3); }
+  .coll-desc {right: -11%; top: -3%; transform: scale(0.3)}
+}
+
+@media (max-width: 340px) {
+  .wrapper { transform: scale(0.3); }
+  .coll-desc {display: none;}
+}
+
 
 
 /* ── ITEMS (cada objeto flotante) ── */
@@ -113,37 +166,36 @@ body {
 /* ── POSICIONES Y TAMAÑOS DE CADA ITEM ── */
 
 .vinilos   { 
-  position: absolute;
-  top: 3vh;
-  left: 6vw;
-  width: 27vw;
+  top: 3%;
+  left: 6%;
+  width: 20%;
   rotate: -3deg;
   filter: drop-shadow( 0px 0px 8px rgba(0, 0, 0, 0.37));
 }
 
 .pokemon   { 
   position: absolute;
-  top: 4vh;
-  left: 42vw;
-  width: 18vw;
+  top: 4%;
+  left: 35%;
+  width: 14%;
   rotate: 0deg;
   filter: drop-shadow( 0px 0px 8px rgba(0, 0, 0, 0.37));
 }
 
 .perfume   { 
   position: absolute;
-  top: 4vh;
-  left: 67vw;
-  width: 23vw;
-  rotate: 0deg;
+  top: 4%;
+  left: 54%;
+  width: 18%;
+  rotate: 5deg;
   filter: drop-shadow( 0px 0px 8px rgba(0, 0, 0, 0.37));
 }
 
 .tattoos   { 
   position: absolute;
-  top: 48vh;
-  left: 8vw;
-  width: 23vw;
+  top: 40%;
+  left: 8%;
+  width: 19%;
   rotate: -10deg;
   filter: drop-shadow( 0px 0px 8px rgba(0, 0, 0, 0.37));
 }
@@ -163,7 +215,8 @@ body {
   
 }
 
-@media (max-width: 768px) {
+
+/* @media (max-width: 768px) {
   .wrapper {
     position: relative;
     height: auto;
@@ -174,9 +227,9 @@ body {
     justify-content: center;
   }
   .item {
-    position: relative; /* sale del absolute */
+    position: relative; 
     width: 30vw;
-    top: auto;  /* resetea los valores de posicionamiento */
+    top: auto;
     left: auto;
   }
-}
+} */
