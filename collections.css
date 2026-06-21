@@ -167,37 +167,46 @@ body {
 
 .vinilos   { 
   position: absolute;
-  top: -5vh;
-  left: 4vw;
-  width: 22vw;
+  top: -3vh;
+  left: 5vw;
+  width: 20vw;
   rotate: -3deg;
   filter: drop-shadow( 0px 0px 8px rgba(0, 0, 0, 0.37));
 }
 
 .pokemon   { 
   position: absolute;
-  top: 4%;
-  left: 35%;
-  width: 14%;
+  top: 0%;
+  left: 33%;
+  width: 19%;
   rotate: 0deg;
   filter: drop-shadow( 0px 0px 8px rgba(0, 0, 0, 0.37));
 }
 
 .perfume   { 
   position: absolute;
-  top: 4%;
-  left: 54%;
-  width: 18%;
+  top: 0%;
+  left: 51%;
+  width: 19%;
   rotate: 5deg;
   filter: drop-shadow( 0px 0px 8px rgba(0, 0, 0, 0.37));
 }
 
 .tattoos   { 
   position: absolute;
-  top: 40%;
-  left: 8%;
-  width: 19%;
+  top: 47%;
+  left: 9%;
+  width: 20%;
   rotate: -10deg;
+  filter: drop-shadow( 0px 0px 8px rgba(0, 0, 0, 0.37));
+}
+
+.plushie   { 
+  position: absolute;
+  top: 44%;
+  left: 33%;
+  width: 17%;
+  rotate: 6deg;
   filter: drop-shadow( 0px 0px 8px rgba(0, 0, 0, 0.37));
 }
 
