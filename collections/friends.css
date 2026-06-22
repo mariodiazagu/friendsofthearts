@@ -30,11 +30,16 @@ body {
   min-height: 100vh;
 }
 
+
 .coll-title {
     font-family: 'Press Start 2P', monospace;
     padding: 50px;
     text-align: center;
     color: whitesmoke;
+}
+
+.wrapper {
+    position: static;
 }
 
 .shelf {
@@ -44,29 +49,86 @@ body {
     filter: drop-shadow( 0px 0px 8px rgb(0, 0, 0));
 }
 
-.nico, .head{
+.nico .head{
     position: absolute;
-    top: -145px;
-    left: 198px;
-    width: 137px;
-    z-index: 1;
+  top: 49px;
+  left: 426px;
+  width: 137px;
+  z-index: 1;
 }
 
-.nico, .body{
+.nico .body{
     position: relative;
-    top: 50px;
-    left: 229px;
-    width: 63px;
+  top: 95px;
+  left: 458px;
+  width: 63px;
+}
+
+.lu .head{
+position: absolute;
+  top: 66px;
+  left: 593px;
+  width: 154px;
+  z-index: 1;
+}
+
+.lu .body{
+    position: relative;
+  top: 7px;
+  left: 633px;
+  width: 63px;
+}
+
+.adri .head{
+position: absolute;
+  top: 396px;
+  left: 1045px;
+  width: 154px;
+  z-index: 1;
+}
+
+.adri .body{
+  position: relative;
+  top: 252px;
+  left: 1096px;
+  width: 63px;
+}
+
+.marta .head{
+position: absolute;
+  top: 396px;
+  left: 1045px;
+  width: 154px;
+  z-index: 1;
+}
+
+.marta .body{
+  position: relative;
+  top: 252px;
+  left: 1096px;
+  width: 63px;
 }
 
 .head {
     animation: bobble 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
 }
 
-.head:hover {
+.nico .head:active {
     content: url('img/friends/nico-head_open.png');
     cursor: url("/images/pointer.png"), auto;
 }
+
+.lu .head:active {
+    content: url('img/friends/lu-head_open.png');
+    cursor: url("/images/pointer.png"), auto;
+}
+
+.adri .head:active {
+    content: url('img/friends/adri-head_open.png');
+    cursor: url("/images/pointer.png"), auto;
+}
+
+
 
 @media (prefers-reduced-motion: reduce) {
     .head {
