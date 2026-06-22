@@ -27,8 +27,8 @@ footer:hover {
     
   }
 
-  .music-widget:hover img{
-    cursor: url("/widgets/img/np-albumcover.png"), auto;
+  .music-widget:hover {
+    cursor: url("/widgets/img/np-albumcover.png") 16 16, auto;
   }
 
   
@@ -174,7 +174,7 @@ footer:hover {
   bottom: -20px;
   right: -20px;
   width: 100px;
-  transform: scaleX(-1); /* la gira para que mire hacia dentro */
+  transform: scaleX(-1);
 }
 
 .visitor-top {

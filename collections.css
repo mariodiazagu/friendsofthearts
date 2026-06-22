@@ -142,7 +142,8 @@ body {
   opacity: 0;
   font-family: 'Press Start 2P', monospace;
   font-size: 25px;
-  color: #fff;
+  color: red;
+  background-color: yellow;
   text-shadow: 
     3px 3px 0 #1a1a3a,
     -1px -1px 0 #1a1a3a,

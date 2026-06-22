@@ -1,0 +1,75 @@
+/* ── VARIABLES GLOBALES ── */
+:root {
+  --yellow: #ffd700;
+  --mono: 'Share Tech Mono', 'Courier New', monospace;
+  --panel-bg: rgba(105, 132, 145, 0.72);
+  --panel-border: rgba(210, 220, 225, 0.75);
+}
+
+/* ── RESET ── */
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+@keyframes bobble {
+  0%   { rotate: 8deg; }
+  25%  { rotate: -8deg; }
+  50%  { rotate: 8deg; }
+  75%  { rotate: -8deg; }
+  100% { rotate: 8deg; }
+}
+
+/* ── BODY ── */
+body {
+  background-image:url("img/starspark2.gif");
+  background-color: rgb(42, 56, 40);
+  cursor: url("/images/pointer.png"), auto;
+  font-family: Georgia, serif;
+  min-height: 100vh;
+}
+
+.coll-title {
+    font-family: 'Press Start 2P', monospace;
+    padding: 50px;
+    text-align: center;
+    color: whitesmoke;
+}
+
+.shelf {
+    position: absolute;
+    left: 15%;
+    top: -5%;
+    filter: drop-shadow( 0px 0px 8px rgb(0, 0, 0));
+}
+
+.nico, .head{
+    position: absolute;
+    top: -145px;
+    left: 198px;
+    width: 137px;
+    z-index: 1;
+}
+
+.nico, .body{
+    position: relative;
+    top: 50px;
+    left: 229px;
+    width: 63px;
+}
+
+.head {
+    animation: bobble 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+}
+
+.head:hover {
+    content: url('img/friends/nico-head_open.png');
+    cursor: url("/images/pointer.png"), auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .head {
+        animation: none;
+    }
+}
