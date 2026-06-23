@@ -1,4 +1,6 @@
-/* ── VARIABLES GLOBALES ── */
+/* ============================================
+   VARIABLES GLOBALES
+   ============================================ */
 :root {
   --yellow: #ffd700;
   --mono: 'Share Tech Mono', 'Courier New', monospace;
@@ -6,24 +8,18 @@
   --panel-border: rgba(210, 220, 225, 0.75);
 }
 
+
 /* ── RESET ── */
-*, *::before, *::after { 
-  box-sizing: border-box; 
-  margin: 0; 
-  padding: 0; 
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes bobble {
-  0%   { rotate: 8deg; }
-  25%  { rotate: -8deg; }
-  50%  { rotate: 8deg; }
-  75%  { rotate: -8deg; }
-  100% { rotate: 8deg; }
-}
 
 /* ── BODY ── */
 body {
-  background-image:url("img/starspark2.gif");
+  background-image: url("img/starspark2.gif");
   background-color: rgb(42, 56, 40);
   cursor: url("/images/pointer.png"), auto;
   font-family: Georgia, serif;
@@ -31,107 +27,137 @@ body {
 }
 
 
-.coll-title {
-    font-family: 'Press Start 2P', monospace;
-    padding: 50px;
-    text-align: center;
-    color: whitesmoke;
+/* ── TÍTULO ── */
+.coll-header a {
+  font-family: 'Press Start 2P', monospace;
+  display: flex;
+  position: relative;
+  text-align: center;
+  margin: 81px;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
 }
 
+.coll-title {
+  position: absolute;
+  font-size: clamp(24px, 4vw, 100px);
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.title-gif {
+
+  position: absolute;
+  width: 20em;
+  opacity: 0;
+  z-index: 1;
+  filter: drop-shadow(5px 5px 5px #222);
+}
+
+.coll-link:hover .title-gif {
+  display: block;
+  opacity: 1;
+}
+
+.coll-link:hover .coll-title {
+  opacity: 0;
+}
+
+
+/* ── WRAPPER Y ESTANTERÍA ── */
 .wrapper {
-    position: static;
+  position: static;
 }
 
 .shelf {
-    position: absolute;
-    left: 15%;
-    top: -5%;
-    filter: drop-shadow( 0px 0px 8px rgb(0, 0, 0));
+  position: absolute;
+  left: 15%;
+  top: -5%;
+  filter: drop-shadow(0px 0px 8px rgb(0, 0, 0));
 }
 
-.nico .head{
-    position: absolute;
-  top: 49px;
+
+/* ── BOBBLEHEADS — ESTRUCTURA ── */
+.nico .head {
+  position: absolute;
+  top: -88px;
   left: 426px;
-  width: 137px;
+  width: 133px;
   z-index: 1;
 }
 
-.nico .body{
-    position: relative;
+.nico .body {
+  position: relative;
   top: 95px;
   left: 458px;
   width: 63px;
 }
 
-.lu .head{
-position: absolute;
-  top: 66px;
-  left: 593px;
-  width: 154px;
+.lu .head {
+  position: absolute;
+  top: -153px;
+  left: 591px;
+  width: 149px;
   z-index: 1;
 }
 
-.lu .body{
-    position: relative;
+.lu .body {
+  position: relative;
   top: 7px;
   left: 633px;
   width: 63px;
 }
 
-.adri .head{
-position: absolute;
-  top: 396px;
-  left: 1045px;
-  width: 154px;
+.adri .head {
+  position: absolute;
+  top: 100px;
+  left: 1066px;
+  width: 126px;
   z-index: 1;
 }
 
-.adri .body{
+.adri .body {
   position: relative;
   top: 252px;
   left: 1096px;
   width: 63px;
 }
 
-.marta .head{
-position: absolute;
-  top: 396px;
-  left: 1045px;
-  width: 154px;
+.marta .head {
+  position: absolute;
+  top: 17px;
+  left: 921px;
+  width: 133px;
   z-index: 1;
 }
 
-.marta .body{
+.marta .body {
   position: relative;
-  top: 252px;
-  left: 1096px;
-  width: 63px;
+  top: 161px;
+  left: 957px;
+  width: 56px;
+}
+
+
+/* ── BOBBLEHEADS — ANIMACIÓN ── */
+@keyframes bobble {
+  0%   { rotate:  8deg; }
+  25%  { rotate: -8deg; }
+  50%  { rotate:  8deg; }
+  75%  { rotate: -8deg; }
+  100% { rotate:  8deg; }
 }
 
 .head {
-    animation: bobble 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
-}
-
-.nico .head:active {
-    content: url('img/friends/nico-head_open.png');
-    cursor: url("/images/pointer.png"), auto;
-}
-
-.lu .head:active {
-    content: url('img/friends/lu-head_open.png');
-    cursor: url("/images/pointer.png"), auto;
-}
-
-.adri .head:active {
-    content: url('img/friends/adri-head_open.png');
-    cursor: url("/images/pointer.png"), auto;
+  animation: bobble 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
 }
 
 
 
+/* ── ACCESIBILIDAD ── */
 @media (prefers-reduced-motion: reduce) {
-    .head {
-        animation: none;
-    }
+  .head {
+    animation: none;
+  }
 }
