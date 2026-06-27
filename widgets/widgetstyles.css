@@ -283,16 +283,15 @@ footer:hover {
 }
 
 .playlist-widget {
-  opacity: 0.85;
+  opacity: 0.75;
   backdrop-filter: blur(10px);
   width: 220px;
-  border: 3px solid #00ff1a;
-;
+  border: 2px solid #00ff1a;
+  background-image: url(/widgets/img/bgfern.jpg);
   border-radius: 8px;
   font-family: 'Press Start 2P', monospace;
   font-size: 7px;
   padding: 8px;
-  filter: invert(100%);
 }
 
 .pl-header {
