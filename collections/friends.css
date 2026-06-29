@@ -66,6 +66,10 @@ body {
 
 
 /* ── WRAPPER Y ESTANTERÍA ── */
+.wrapper {
+  display: grid;
+  justify-items: center;
+}
 
 .shelf {
   position: relative;
@@ -73,6 +77,7 @@ body {
   justify-content: center;
   filter: drop-shadow(0px 0px 8px rgb(0, 0, 0));
   width: fit-content;
+  top: -16%;
 }
 
 .shelf img {
@@ -86,22 +91,124 @@ body {
   position: absolute;
 }
 
+/* Nico*/
+
 .nico {
   position: absolute;
-  top: -20px;
+  top: 147px;
   left: 145px;
   width: 128px;
-  padding-top: 10px;
+  padding-top: 84px;
+  z-index: 1;
 }
 
 .nico img {
   width: 100%;
 }
 
+.nico .body {
+  position: absolute;
+  width: 90px;
+  left: 13px;
+  top: 102px;
+  z-index: -1;
+}
+
+/* Lu*/
+
+.lu {
+  position: absolute;
+  top: 147px;
+  left: 145px;
+  width: 128px;
+  padding-top: 84px;
+  z-index: 1;
+}
+
+.lu img {
+  width: 100%;
+}
+
+.lu .body {
+  position: absolute;
+  width: 90px;
+  left: 156px;
+  top: 89px;
+  z-index: -1;
+}
+
+.lu .head {
+  position: absolute;
+  width: 145px;
+  left: 127px;
+  top: -5px;
+}
+
+/* Adri */
+
+.adri {
+  position: absolute;
+  top: 482px;
+  left: 653px;
+  width: 128px;
+  padding-top: 84px;
+  z-index: 1;
+}
+
+.adri img {
+  width: 100%;
+}
+
+.adri .body {
+  position: absolute;
+  width: 90px;
+  left: 156px;
+  top: 89px;
+  z-index: -1;
+}
+
+.adri .head {
+  position: absolute;
+  width: 124px;
+  left: 139px;
+  top: 4px;
+}
+
+/* Marta*/
+
+.marta {
+  position: absolute;
+  top: 447px;
+  left: 810px;
+  width: 128px;
+  padding-top: 84px;
+  z-index: 1;
+}
+
+.marta img {
+  width: 100%;
+}
+
+.marta .body {
+  position: absolute;
+  width: 71px;
+  left: 152px;
+  top: 117px;
+  z-index: -1;
+}
+
+.marta .head {
+  position: absolute;
+  width: 129px;
+  left: 125px;
+  top: 33px;
+}
+
 .head-wrapper {
   position: absolute;
   top: -60px;
   width: 100%;
+  text-align: center;
 }
 
 /* ── BOBBLEHEADS — ANIMACIÓN ── */
@@ -115,7 +222,7 @@ body {
 
 .head {
   animation: bobble 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
-  transform-origin: bottom center;
+
   width: 100px;
 }
 

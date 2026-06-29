@@ -286,8 +286,8 @@ footer:hover {
   opacity: 0.75;
   backdrop-filter: blur(10px);
   width: 220px;
-  border: 2px solid #00ff1a;
-  background-image: url(/widgets/img/bgfern.jpg);
+  border: 2px solid #000000;
+  background-image: url(/widgets/img/0000164-tile.jpg);
   border-radius: 8px;
   font-family: 'Press Start 2P', monospace;
   font-size: 7px;
@@ -298,7 +298,7 @@ footer:hover {
   display: flex;
   justify-content: space-between;
   margin-bottom: 6px;
-  color: #00ff1a;
+  color: #000000;
 }
 
 .pl-progress {
